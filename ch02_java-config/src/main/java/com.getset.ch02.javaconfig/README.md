@@ -1,0 +1,2 @@
+这个例子与ch01不同的地方在于FunctionServcie和UseFunctionService并没有注解，而是将所有的配置都放在JavaConfig中。
+同样也是用AnnotationConfigApplicationContext来加载JavaConfig中的配置信息。

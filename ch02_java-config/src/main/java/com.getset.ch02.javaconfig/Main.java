@@ -1,4 +1,4 @@
-package ch01.di;
+package com.getset.ch02.javaconfig;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class Main {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(DiConfig.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfig.class);
         UseFunctionService useFunctionService = applicationContext.getBean(UseFunctionService.class);
         System.out.println(useFunctionService.sayHello("world"));
         applicationContext.close();

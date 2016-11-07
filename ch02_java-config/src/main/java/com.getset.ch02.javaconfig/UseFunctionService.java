@@ -1,20 +1,20 @@
-package ch01.di;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+package com.getset.ch02.javaconfig;
 
 /**
- * This class uses function service.
+ * This class uses function service.与ch01不同的是，这里没有添加@Service和@Autowire的注解。
  * Created by Kang on 2016/11/7 0007.
  */
 
 // 使用@Service注解声明这个类是Spring管理的一个bean
-@Service
+
 public class UseFunctionService {
 
     // 使用@Autowired将FunctionService的实体Bean注入到UseFunctionService中
-    @Autowired
     FunctionService functionService;
+
+    public void setFunctionService(FunctionService functionService) {
+        this.functionService = functionService;
+    }
 
     public String sayHello(String word) {
         return functionService.sayHello(word);

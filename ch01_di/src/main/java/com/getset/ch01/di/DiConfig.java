@@ -1,4 +1,4 @@
-package ch01.di;
+package com.getset.ch01.di;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +10,6 @@ import org.springframework.context.annotation.Configuration;
 
 // 声明当前类是一个配置类
 @Configuration
-@ComponentScan("ch01.di")
+@ComponentScan("com.getset.ch01.di")
 public class DiConfig {
 }

@@ -1,4 +1,4 @@
-package ch01.di;
+package com.getset.ch01.di;
 
 import org.springframework.stereotype.Service;
 
