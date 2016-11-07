@@ -1,4 +1,4 @@
-package com.getset.ch02.javaconfig;
+package com.getset.ch01.javaconfig;
 
 /**
  * 这是一个功能类，跟ch01不同的是没有用@Service注解.

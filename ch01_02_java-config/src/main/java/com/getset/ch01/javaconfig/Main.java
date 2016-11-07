@@ -1,4 +1,4 @@
-package com.getset.ch02.javaconfig;
+package com.getset.ch01.javaconfig;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

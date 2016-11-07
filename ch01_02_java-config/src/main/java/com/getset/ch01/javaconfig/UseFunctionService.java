@@ -1,4 +1,4 @@
-package com.getset.ch02.javaconfig;
+package com.getset.ch01.javaconfig;
 
 /**
  * This class uses function service.与ch01不同的是，这里没有添加@Service和@Autowire的注解。
