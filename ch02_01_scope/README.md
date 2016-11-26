@@ -1,4 +1,4 @@
-
+## Bean的Scope
 本例演示了Spring Beans的不同scope产生的不同效果：
 1. Singleton，默认为单例模式，也就是整个容器中只有一个对象，每次getBean获取到的时候同一个对象；
 2. Prototype，每次getBean的时候会返回一个新的对象；

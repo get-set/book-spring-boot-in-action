@@ -1,4 +1,4 @@
-
+## 2.4 Profile
 Profile支持在不同的环境中使用不同的配置。
 从ProfileConfig可以看出，使用不同的Profile时会创建不同的对象。
 

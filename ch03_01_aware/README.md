@@ -1,3 +1,4 @@
+## 3.1 Spring Aware
 依赖注入最大的特点是Bean对Spring容器的存在是不知道的，所以耦合度很低。
 但是在实际项目中，不可避免的要用到Spring容器本身的功能资源，这时候Bean需要意识到Spring容器的存在，获取到容器的信息，从而调用pring的资源，不过这时候也就会跟Spring耦合了。
 Spring提供了几个Aware接口：
