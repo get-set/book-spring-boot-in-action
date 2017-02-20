@@ -1,4 +1,4 @@
-package com.getset.ch04.springmvc4;
+package com.getset.ch04.mvcconfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 // @EnableWebMVC注解会开启一些默认的配置，如一些ViewResolver或者MessageConverter等。
 @EnableWebMvc
-@ComponentScan("com.getset.ch04.springmvc4")
+@ComponentScan("com.getset.ch04.mvcconfig")
 public class MvcConfig {
     @Bean
     public InternalResourceViewResolver viewResolver() {

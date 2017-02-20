@@ -1,4 +1,4 @@
-package com.getset.ch04.springmvc4;
+package com.getset.ch04.mvcconfig;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;

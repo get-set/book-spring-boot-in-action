@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.getset</groupId>
-    <artifactId>ch04_01_springmvc4</artifactId>
+    <artifactId>ch04_02_mvcconfig</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
