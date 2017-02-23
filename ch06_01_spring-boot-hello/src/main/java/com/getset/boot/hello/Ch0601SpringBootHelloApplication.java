@@ -17,7 +17,7 @@ public class Ch0601SpringBootHelloApplication {
 
     @RequestMapping("/")
     public String hello() {
-        return helloService.getMsg();
+        return helloService.sayHello();
     }
 
 	public static void main(String[] args) {
