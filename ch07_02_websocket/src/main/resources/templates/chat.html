@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>聊天界面</title>
+    <script th:src="@{js/sockjs.min.js}"></script>
+    <script th:src="@{js/stomp.min.js}"></script>
+    <script th:src="@{js/jquery.min.js}"></script>
+</head>
+<body>
+
+<p>
+    聊天室
+</p>
+
+<form id="chatForm">
+    <textarea id="text" rows="4" cols="60" name="text"></textarea>
+    <input type="submit"/><input type="button" id="stop" value="断开"/>
+</form>
+<div id="output"></div>
+
+<script th:inline="javascript">
+    $('#chatForm').submit(function (e) {
+        e.preventDefault();
+        var text = $('#text').val();
+        sendSpittle(text);
+    });
+
+    var sock = new SockJS("/endpointChat");
+    var stomp = Stomp.over(sock);
+    stomp.connect('guest', 'guest', function (frame) {
+        // 订阅地址前有“/user”，从而可以将消息发送到指定用户
+        stomp.subscribe("/user/queue/notifications", handleNotification);
+    });
+
+    function handleNotification(message) {
+        $('#output').append("<b>Received: " + message.body + "</b><br/>");
+    }
+
+    function sendSpittle(text) {
+        console.log("发送消息：" + text);
+        stomp.send("/chat", {}, text);
+    }
+
+    $('#stop').click(function () {
+        sock.close();
+    });
+
+</script>
+
+</body>
+</html>

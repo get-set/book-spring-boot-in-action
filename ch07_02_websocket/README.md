@@ -8,3 +8,9 @@ WebSocket通过一个socket来实现双工异步通信能力。通常使用STOMP
 1. 配置WebSocket，需要在配置类（如WebSocketConfig）中使用`@EnableWebSocketMessageBroker`来开启WebSocket支持，并通过继承`@EnableWebSocketMessageBroker`类，重写其方法来配置WebSocket。
 2. 配置消息处理用的Controller（如`MyController`），类似于普通http Request的处理，这里使用`@MessageMapping`，另外需要使用`@SendTo`指定反馈发送到的订阅地址。
 3. 在页面上使用sockjs和stomp的JavaScript方法同服务器基于socket建立WebSocket连接，通过发送和订阅实现消息交互。
+
+### 2. 点对点
+1. 本例中使用了Spring Security来实现用户认证，具体可见`WebSecurityConfig`配置内容。
+2. WebSocketConfig同广播式类似，注册endpoint和配置消息代理。
+3. 在Controller中，使用`SimpMessagingTemplate`来实现向指定用户的浏览器发送消息。
+4. 在页面上，使用方式基本与广播式类似，不同之处来与订阅地址前增加了“/user”。
