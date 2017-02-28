@@ -1,5 +1,6 @@
 package com.getset.jpa.controller;
 
+import com.getset.jpa.dao.CustomPersonRepository;
 import com.getset.jpa.dao.PersonRepository;
 import com.getset.jpa.domain.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class DataController {
 
     @Autowired
     PersonRepository personRepository;
+
+    @Autowired
+    CustomPersonRepository customPersonRepository;
 
     // 测试保存
     @RequestMapping("/save")
@@ -67,6 +71,21 @@ public class DataController {
     @RequestMapping("/page")
     public Page<Person> page() {
         Page<Person> pagePeople = personRepository.findAll(new PageRequest(1,2));
+        return pagePeople;
+    }
+
+    /**
+     * 基于自定义Repository，接受一个Person对象person。
+     * 当person的name有值时，会自动对name进行like查询；
+     * 当person的age有值时，会进行等于查询；
+     * 当person中有多个值不为空时，会自动构造多个查询条件；
+     * 当person所有值为空时，默认查询出所有的记录。
+     * @param person
+     * @return
+     */
+    @RequestMapping("/auto")
+    public Page<Person> auto(Person person) {
+        Page<Person> pagePeople = customPersonRepository.findByAuto(person, new PageRequest(0, 10));
         return pagePeople;
     }
 
