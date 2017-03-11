@@ -1,0 +1,10 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost         #当前Eureka Server的主机名
+  client:
+    register-with-eureka: false #自己不用到Eureka上注册
+    fetch-registry: false
+    
