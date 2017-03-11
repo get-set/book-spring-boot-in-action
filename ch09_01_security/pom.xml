@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.getset</groupId>
-	<artifactId>ch08_04_cache</artifactId>
+	<artifactId>ch09_01_security</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>ch08_04_cache</name>
+	<name>ch09_01_security</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
